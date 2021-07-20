@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<body>
+<h1>Clock </h1>
+<p id="demo"></p>
+<script>
+var t = new Date();
+var h=t.getHours(),m=t.getMinutes(),s=t.getSeconds(), am_pm;
+h>12?am_pm="PM":am_pm="AM";
+
+function test()
+{
+	if(h>12)
+	  h-=12;
+	document.getElementById('demo').innerHTML = (h<10?"0"+h:h) + ":" + (m<10?"0"+m:m) + ":" + (s<10?"0"+s:s) + am_pm;
+	s++;
+	if(s==60)
+	 {
+	   s=0;
+	   m+=1;
+	 }	
+	if(m==60)
+	{
+	   m=0;
+	   h+=1;
+	}
+	if(am_pm=="AM" && h==12) am_pm="PM";
+	if(am_pm=="PM" && h==12) am_pm="AM";
+}
+setInterval(test, 1000);
+</script>
+</body>
+</head>
