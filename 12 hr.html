@@ -3,13 +3,11 @@
 <html>
 <body>
 <p id="c" style="font-size:50px"></p>
-
 <script>
 var t = new Date();
 var h=t.getHours(),m=t.getMinutes(),s=t.getSeconds(), am_pm;
 am_pm = h>12?"PM":"AM";
 if(h==0) h=12;
-
 function clk()
 {	
 	if(h>12) h-=12;
@@ -28,10 +26,7 @@ function clk()
 	if( m==0 && h==12 && s==0 && am_pm=="AM") am_pm="PM";
 	else if ( m==0 && h==12 && s==0 && am_pm=="PM") am_pm="AM";
 }
-
-
 setInterval(clk, 1000);
 </script>
-
 </body>
 </head>
